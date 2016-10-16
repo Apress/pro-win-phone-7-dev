@@ -1,0 +1,15 @@
+﻿<ConfigSettings>
+  <setting>
+    <key>BackgroundColor</key>
+    <value>NavyBlue</value>
+  </setting>
+  <setting>
+    <key>ForegroundColor</key>
+    <value>Gold</value>
+  </setting>
+  <setting>
+    <key>Shape</key>
+    <value>Rectangle</value>
+  </setting>
+</ConfigSettings>
+

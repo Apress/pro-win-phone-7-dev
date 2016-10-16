@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="System.String[]">
+    <Item>Sprites/heroship0.tga</Item>
+    <Item>Sprites/heroship1.tga</Item>
+    <Item>Sprites/heroship2.tga</Item>
+    <Item>Sprites/heroship3.tga</Item>
+    <Item>Sprites/heroship4.tga</Item>
+    <Item>Sprites/heroship5.tga</Item>
+    <Item>Sprites/heroship6.tga</Item>
+    <Item>Sprites/heroship7.tga</Item>
+    <Item>Sprites/heroship8.tga</Item>
+    <Item>Sprites/heroship9.tga</Item>
+    <Item>Sprites/spaceship0.tga</Item>
+    <Item>Sprites/spaceship1.tga</Item>
+    <Item>Sprites/spaceship2.tga</Item>
+    <Item>Sprites/spaceship3.tga</Item>
+    <Item>Sprites/spaceship4.tga</Item>
+    <Item>Sprites/spaceship5.tga</Item>
+    <Item>Sprites/spaceship6.tga</Item>
+    <Item>Sprites/spaceship7.tga</Item>
+    <Item>Sprites/spaceship8.tga</Item>
+    <Item>Sprites/spaceship9.tga</Item>
+    <Item>Sprites/missile0.tga</Item>
+    <Item>Sprites/missile1.tga</Item>
+    <Item>Sprites/missile2.tga</Item>
+    <Item>Sprites/missile3.tga</Item>
+    <Item>Sprites/missile4.tga</Item>
+    <Item>Sprites/missile5.tga</Item>
+    <Item>Sprites/missile6.tga</Item>
+    <Item>Sprites/missile7.tga</Item>
+    <Item>Sprites/missile8.tga</Item>
+    <Item>Sprites/missile9.tga</Item>
+  </Asset>
+</XnaContent>

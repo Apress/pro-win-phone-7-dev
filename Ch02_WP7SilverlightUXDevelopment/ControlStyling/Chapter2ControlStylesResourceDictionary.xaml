@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style x:Key="TextBlockStyle1" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="Gold"/>
+    <Setter Property="Opacity" Value="0.7"/>
+  </Style>
+  <Style x:Key="TextBlockStyle2" TargetType="TextBlock" 
+         BasedOn="{StaticResource PhoneTextExtraLargeStyle}" >
+    <Setter Property="Foreground">
+      <Setter.Value>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="Gold" Offset="0"/>
+          <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Opacity" Value="0.7"/>
+  </Style>
+  <Style x:Key="ButtonStyle" TargetType="Button" >
+    <Setter Property="Foreground">
+      <Setter.Value>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+          <GradientStop Color="Gold" Offset="0"/>
+          <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="Opacity" Value="0.7"/>
+    <Setter Property="BorderBrush" Value="Red"/>
+  </Style>
+  <!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

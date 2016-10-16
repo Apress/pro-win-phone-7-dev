@@ -1,0 +1,138 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="DeviceInfo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="CHAPTER 4" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="device information" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        <Grid x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
+        	<ScrollViewer Margin="12,0,0,0" VerticalAlignment="Top">
+        		<StackPanel Orientation="Vertical">
+        			<StackPanel x:Name="DeviceAndUserInfo" d:LayoutOverrides="Width">
+        				<TextBlock Margin="0" x:Name="IdentityStatusLabel" Text="Identity" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" />
+        				<StackPanel x:Name="DeviceIDStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="DeviceID:" Style="{StaticResource PhoneTextNormalStyle}" />
+        					<TextBlock x:Name="DeviceIDTextBlock" Text="..." Margin="12,0,0,0" />
+        				</StackPanel>
+        				<StackPanel x:Name="UserIDStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="UserID:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="UserIDTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        			</StackPanel>
+        			<StackPanel x:Name="DeviceInfo">
+        				<TextBlock Margin="0" x:Name="DeviceInfoStatusLabel" Text="Device Info" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" />
+        				<StackPanel x:Name="DeviceManufacturerStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Device Manufacturer:" Style="{StaticResource PhoneTextNormalStyle}" />
+        					<TextBlock x:Name="DeviceManufacturerTextBlock" Text="..." Margin="12,0,0,0" />
+        				</StackPanel>
+        				<StackPanel x:Name="DeviceNameStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Device Name:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="DeviceNameTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="DeviceFirmwareVersionStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Device Firmware Version:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="DeviceFirmwareVersionTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="DeviceHardwareVersionStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Device Hardware Version:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="DeviceHardwareVersionTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="DeviceTotalMemoryStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Total Memory (bytes):" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="DeviceTotalMemoryTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="AppCurrentMemUsageStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Current Mem Usage (bytes):" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="ApplicationCurrentMemoryUsageTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="AppPeakMemUsageStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Peak Mem Usage (bytes):" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="ApplicationPeakMemoryUsageTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        			</StackPanel>
+        			<StackPanel x:Name="SystemEnvironmentInfo">
+        				<TextBlock Margin="0" x:Name="SystemEnvironmentInfo1" Text="System Environment Info" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" />
+        				<StackPanel x:Name="CurrentDirStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Current Directory:" Style="{StaticResource PhoneTextNormalStyle}" />
+        					<TextBlock x:Name="CurrentDirectoryTextBlock" Text="..." Margin="12,0,0,0" />
+        				</StackPanel>
+        				<StackPanel x:Name="ShutdownStartedStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Shutdown Started?:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="HasShutdownStartedTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="OSVersionPlatform" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="OS Platform:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="OSVersionPlatformTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="OSVersionVersionNumber" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="OS Version #:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="OSVersionVersionTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="TickCountStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="Tick Count:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="TickCountTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        				<StackPanel x:Name="CLRVersionStackPanel" Margin="12,0,0,0" Orientation="Horizontal">
+        					<TextBlock Margin="0" Text="CLR Version:" Style="{StaticResource PhoneTextNormalStyle}" TextAlignment="Right" />
+        					<TextBlock Margin="12,0,0,0" x:Name="CLRVersionTextBlock" Text="..." Style="{StaticResource PhoneTextNormalStyle}" />
+        				</StackPanel>
+        			</StackPanel>
+        			<StackPanel x:Name="NetworkStatusInfo" d:LayoutOverrides="Width">
+        				<TextBlock Margin="0" x:Name="NeworkStatusLabel" Text="Network Status" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" />
+        				<StackPanel x:Name="NetworkAvailableStackPanel" Margin="12,0,0,0" Orientation="Horizontal" >
+        					<TextBlock Text="Network Available?" Style="{StaticResource PhoneTextNormalStyle}" Margin="0" />
+        					<TextBlock HorizontalAlignment="Left" x:Name="NetworkAvailableTextBlock" Text="..." Width="95" Height="27" Margin="12,0,0,0" />
+        				</StackPanel>
+        				<StackPanel x:Name="NetworkTypeStackPanel" Orientation="Horizontal" Width="432" Margin="12,0,0,0">
+        					<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="Network Type:" Margin="0" d:LayoutOverrides="Width" />
+        					<TextBlock x:Name="NetworkConnectionTextBlock" Style="{StaticResource PhoneTextNormalStyle}" Text="..." Margin="12,0,0,0" d:LayoutOverrides="Width" />
+        				</StackPanel>
+        			</StackPanel>
+          <StackPanel x:Name="MarketplaceStatusInfo" d:LayoutOverrides="Width">
+            <TextBlock Margin="0" x:Name="LicenseStatusLabel" Text="License Status" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" />
+            <StackPanel x:Name="IsTrialStackPanel" Margin="12,0,0,0" Orientation="Horizontal" >
+              <TextBlock Text="Is Trial?" Style="{StaticResource PhoneTextNormalStyle}" Margin="0" />
+              <TextBlock HorizontalAlignment="Left" x:Name="IsTrialTextBlock" Text="..." Width="95" Height="27" Margin="12,0,0,0" />
+            </StackPanel>
+          </StackPanel>
+
+        </StackPanel>
+        	</ScrollViewer>
+        </Grid>
+
+        <!--ContentPanel - place additional content here-->
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

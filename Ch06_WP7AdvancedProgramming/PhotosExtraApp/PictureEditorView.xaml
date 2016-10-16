@@ -1,0 +1,52 @@
+﻿<phone:PhoneApplicationPage x:Name="phoneApplicationPage" x:Class="PhotosExtraApp.PictureEditorView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+  xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:PhotosExtraApp_Converters="clr-namespace:PhotosExtraApp.Converters" 
+  FontFamily="{StaticResource PhoneFontFamilyNormal}"
+  FontSize="{StaticResource PhoneFontSizeNormal}"
+  Foreground="{StaticResource PhoneForegroundBrush}"
+  SupportedOrientations="PortraitOrLandscape"
+  Orientation="Portrait"
+  mc:Ignorable="d"
+  d:DesignWidth="480"
+  d:DesignHeight="696"
+  shell:SystemTray.IsVisible="True"
+  DataContext="{Binding  PictureEditing, Source={StaticResource Locator}}">
+  <phone:PhoneApplicationPage.Resources>
+    <PhotosExtraApp_Converters:ImageSourceConverter x:Key="ImageSourceConverter"/>
+    <PhotosExtraApp_Converters:VisibilityConverter x:Key="VisibilityConverter"/>
+    <PhotosExtraApp_Converters:ImageNameConverter x:Key="ImageNameConverter" />
+  </phone:PhoneApplicationPage.Resources>
+  <Grid x:Name="LayoutRoot"
+	      Background="Transparent">
+    <StackPanel>
+      <TextBlock TextWrapping="Wrap" Text="{Binding PictureToEdit.Name, Converter={StaticResource ImageNameConverter}, Mode=OneWay}" Margin="24,0,0,100" Visibility="{Binding Orientation, Converter={StaticResource VisibilityConverter}, ElementName=phoneApplicationPage}" Style="{StaticResource PhoneTextLargeStyle}"/>
+      <Grid x:Name="WriteableBitMapSourceArea" Height="0">
+        <Image x:Name="ImageToEdit" Source="{Binding PictureToEdit, Converter={StaticResource ImageSourceConverter}}" VerticalAlignment="Top" />
+      </Grid>
+    </StackPanel>
+  </Grid>
+
+  <phone:PhoneApplicationPage.ApplicationBar>
+    <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+      <shell:ApplicationBarIconButton x:Name="EditAppBarBtn" 
+        IconUri="/icons/appbar.edit.rest.png" Text="edit"
+        Click="EditAppBarBtn_Click"/>
+      <shell:ApplicationBarIconButton x:Name="saveAppBarBtn" 
+        IconUri="/icons/appbar.save.rest.png" Text="save"
+        Click="saveAppBarBtn_Click"/>
+      <shell:ApplicationBar.MenuItems>
+        <shell:ApplicationBarMenuItem x:Name="SaveAsAppMenItem" 
+         Text="Save As..."
+         Click="SaveAsAppMenItem_Click"/>
+        <shell:ApplicationBarMenuItem x:Name="RevertToLastSaveMenuItem" 
+         Text="Revert To Last Save"
+         Click="RevertToLastSaveMenuItem_Click"/>
+      </shell:ApplicationBar.MenuItems>
+    </shell:ApplicationBar>
+  </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

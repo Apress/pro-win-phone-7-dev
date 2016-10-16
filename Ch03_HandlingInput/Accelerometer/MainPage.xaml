@@ -1,0 +1,46 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AccelerometerInput.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+  <!--LayoutRoot is the root grid where all page content is placed-->
+  <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!--TitlePanel contains the name of the application and page title-->
+    <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+      <TextBlock x:Name="ApplicationTitle" Text="CHAPTER 3" Style="{StaticResource PhoneTextNormalStyle}"/>
+      <TextBlock x:Name="PageTitle" Text="accelerometer" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+    </StackPanel>
+
+    <!--ContentPanel - place additional content here-->
+    <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+      <TextBlock HorizontalAlignment="Left" Margin="12,82,0,0" Name="textBlock1" Text="X Axis" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" />
+      <TextBlock HorizontalAlignment="Left" Margin="13,228,0,264" Name="textBlock2" Text="Y Axis" Style="{StaticResource PhoneTextLargeStyle}" d:LayoutOverrides="Height" />
+      <TextBlock HorizontalAlignment="Left" Margin="12,378,0,0" Name="textBlock3" Text="Z Axis" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" />
+      <TextBlock Margin="13,131,0,0" x:Name="xAxis" VerticalAlignment="Top" Style="{StaticResource PhoneTextLargeStyle}" d:LayoutOverrides="Width" Text="0.0" />
+      <TextBlock Margin="13,0,0,215" x:Name="yAxis" VerticalAlignment="Bottom" Style="{StaticResource PhoneTextLargeStyle}" Text="0.0" d:LayoutOverrides="Width" />
+      <TextBlock Margin="13,0,0,65" x:Name="zAxis" VerticalAlignment="Bottom" Style="{StaticResource PhoneTextLargeStyle}" Text="0.0" d:LayoutOverrides="Width" />
+    </Grid>
+  </Grid>
+  <phone:PhoneApplicationPage.ApplicationBar>
+    <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+      <shell:ApplicationBarIconButton x:Name="StartAccelerometerButton" IconUri="/icons/appbar.transport.play.rest.png" Text="Start Accelerometer" Click="StartAccelerometerButton_Click"/>
+      <shell:ApplicationBarIconButton x:Name="StopAccelerometerButton" IconUri="/icons/appbar.stop.rest.png" Text="Stop Accelerometer" Click="StopAccelerometerButton_Click"/>
+    </shell:ApplicationBar>
+  </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

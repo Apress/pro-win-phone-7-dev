@@ -1,0 +1,14 @@
+﻿<AsynchronousProgramming:ApressBooks xmlns:AsynchronousProgramming="clr-namespace:AsynchronousProgramming">
+	<AsynchronousProgramming:ApressBooks.ApressBookList>
+		<AsynchronousProgramming:ApressBook Author="Maecenas" Description="Vestibulum duis aenean nam class" ISBN="Parturient curae" ID="Nam" NumberOfPages="Nullam nunc quisque" PublishedDate="01/15/2011 10:28:10" Price="$100" Title="Dis vestibulum ante"/>
+		<AsynchronousProgramming:ApressBook Author="Nam class" Description="Maecenas auctor parturient aliquam diam" ISBN="Congue etiam consequat fusce" ID="Sed" NumberOfPages="Lorem vestibulum blandit" PublishedDate="01/15/2011 10:28:10" Price="$29.99" Title="Convallis enim commodo"/>
+		<AsynchronousProgramming:ApressBook Author="Sed" Description="Bibendum adipiscing" ISBN="Hac dictumst" ID="Dis" NumberOfPages="Lectus vestibulum" PublishedDate="01/15/2011 10:28:10" Price="$249.99" Title="Fermentum adipiscing erat leo eleifend"/>
+		<AsynchronousProgramming:ApressBook Author="Curae" Description="Fringilla facilisi mus faucibus nibh" ISBN="Habitasse nisi ligula" ID="Est" NumberOfPages="Inceptos interdum" PublishedDate="01/15/2011 10:28:10" Price="$1000" Title="Dapibus luctus dolor egestas"/>
+		<AsynchronousProgramming:ApressBook Author="Praesent accumsan" Description="Non per pharetra sed placerat" ISBN="Sem sagittis" ID="Hac" NumberOfPages="Fames senectus felis ipsum" PublishedDate="01/15/2011 10:28:10" Price="$2.99" Title="Imperdiet lacus"/>
+		<AsynchronousProgramming:ApressBook Author="Cras aenean" Description="Parturient gravida sit" ISBN="Porttitor lacinia pede laoreet vel" ID="Leo" NumberOfPages="Natoque vestibulum mauris" PublishedDate="01/15/2011 10:28:10" Price="$300" Title="Torquent quis urna nam tristique"/>
+		<AsynchronousProgramming:ApressBook Author="Aliquam" Description="Cras ultrices sed vehicula" ISBN="Montes amet ante dis vulputate" ID="Mus" NumberOfPages="Est nostra curabitur hac" PublishedDate="01/15/2011 10:28:10" Price="$10,999" Title="Lorem arcu magna parturient mus"/>
+		<AsynchronousProgramming:ApressBook Author="Mauris" Description="Pretium massa nec rhoncus" ISBN="Sodales per viverra" ID="Nec" NumberOfPages="Ornare metus consequat sed aliquam" PublishedDate="01/15/2011 10:28:10" Price="$49.99" Title="Accumsan bibendum platea vestibulum convallis"/>
+		<AsynchronousProgramming:ApressBook Author="Nullam bibendum" Description="Facilisi rutrum sem" ISBN="Semper parturient faucibus" ID="Non" NumberOfPages="Netus vestibulum" PublishedDate="01/15/2011 10:28:10" Price="$25.34" Title="Taciti sit facilisis"/>
+		<AsynchronousProgramming:ApressBook Author="Aptent" Description="Aliquet interdum lobortis porta vel" ISBN="Enim purus sed risus pharetra" ID="Per" NumberOfPages="Adipiscing placerat pulvinar velit erat" PublishedDate="01/15/2011 10:28:10" Price="$100" Title="Vitae habitasse"/>
+	</AsynchronousProgramming:ApressBooks.ApressBookList>
+</AsynchronousProgramming:ApressBooks>

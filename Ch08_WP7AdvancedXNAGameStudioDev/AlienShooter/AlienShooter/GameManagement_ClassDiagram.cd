@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AlienShooter.GameManagement.InputState">
+    <Position X="3" Y="1" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAwAAUBAAAAAAAAAAAACQAAFYAAAAAEAIAAAEAAAAEA=</HashCode>
+      <FileName>GameManagement\InputState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlienShooter.GameManagement.ScreenManager">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAYAVEAgAAAgAwAAAAAAABAAAQAIiBAERAAAgAACCEQ=</HashCode>
+      <FileName>GameManagement\ScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlienShooter.GameManagement.GameScreen">
+    <Position X="5.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAwAFBCAAARQAgAEEAIAAAAADCBAAA4AAgAGAkYIBAY=</HashCode>
+      <FileName>GameManagement\GameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="AlienShooter.GameManagement.ScreenState">
+    <Position X="3" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAEAAA=</HashCode>
+      <FileName>GameManagement\GameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

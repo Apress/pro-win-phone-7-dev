@@ -1,0 +1,71 @@
+﻿<phone:PhoneApplicationPage x:Class="AdvancedDataBinding.View.LazyLoadImages"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+  xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:delay="clr-namespace:Delay;assembly=PhonePerformance"
+  FontFamily="{StaticResource PhoneFontFamilyNormal}"
+  FontSize="{StaticResource PhoneFontSizeNormal}"
+  Foreground="{StaticResource PhoneForegroundBrush}"
+  SupportedOrientations="Portrait"
+  Orientation="Portrait"
+  mc:Ignorable="d"
+  d:DesignWidth="480"
+  d:DesignHeight="696"
+  shell:SystemTray.IsVisible="True"
+  DataContext="{Binding LazyLoad, Mode=OneWay, Source={StaticResource Locator}}" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="NetflixTopTitleDataTemplate">
+			<StackPanel Margin="0,0,0,20">
+				<TextBlock TextWrapping="Wrap" Text="{Binding Name}" Margin="0,0,0,10" Style="{StaticResource PhoneTextLargeStyle}"/>
+				<Image delay:LowProfileImageLoader.UriSource="{Binding BoxArt.SmallUrl}" HorizontalAlignment="Left" Stretch="UniformToFill" Width="150"/>
+			</StackPanel>
+		</DataTemplate>
+	</phone:PhoneApplicationPage.Resources>
+
+  <Grid x:Name="LayoutRoot"
+	      Background="Transparent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <StackPanel x:Name="TitlePanel"
+		            Grid.Row="0"
+		            Margin="24,24,0,12">
+      <TextBlock x:Name="ApplicationTitle"
+			           Text="{Binding ApplicationTitle}"
+			           Style="{StaticResource PhoneTextNormalStyle}" />
+      <TextBlock x:Name="PageTitle"
+			           Text="{Binding PageName}"
+			           Margin="-3,-8,0,0"
+			           Style="{StaticResource PhoneTextTitle1Style}" />
+    </StackPanel>
+
+    <Grid x:Name="ContentGrid"
+		      Grid.Row="1">
+
+      <TextBlock Text="{Binding Welcome}"
+			           Style="{StaticResource PhoneTextNormalStyle}"
+			           HorizontalAlignment="Center"
+			           VerticalAlignment="Center"
+			           FontSize="40" />
+      <ListBox Name="topTitlesListBox" ItemsSource="{Binding TopMovieTitles}" ItemTemplate="{StaticResource NetflixTopTitleDataTemplate}" />
+      <toolkit:PerformanceProgressBar Margin="0" Name="performanceProgressBar1" VerticalAlignment="Center" IsIndeterminate="{Binding ShowProgressBar}" />
+    </Grid>
+  </Grid>
+
+  <phone:PhoneApplicationPage.ApplicationBar>
+    <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+      <shell:ApplicationBarIconButton x:Name="dowloadTopTitlesAppBarBtn" 
+       IconUri="/icons/appbar.download.rest.png" Text="top titles"
+       Click="dowloadTopTitlesAppBarBtn_Click">        
+      </shell:ApplicationBarIconButton>
+    </shell:ApplicationBar>
+  </phone:PhoneApplicationPage.ApplicationBar>
+
+
+
+</phone:PhoneApplicationPage>
